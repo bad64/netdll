@@ -1,0 +1,13 @@
+[package]
+name = "netdll"
+version = "0.1.0"
+authors = ["sombra"]
+edition = "2018"
+
+[dependencies]
+dns-lookup = "1.0.1"
+regex = "1.2.1"
+
+[lib]
+name = "rsnet"
+crate-type = ["cdylib"]
