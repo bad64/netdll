@@ -83,9 +83,7 @@ pub extern "C" fn request(method: *const c_char, hostent: *const c_char, content
 }
 
 #[no_mangle]
-pub extern "C" fn freeresp (resp: *mut c_char) {
-    unsafe {
-        if resp.is_null() { return }
-        CString::from_raw(resp)
-    };
+pub unsafe extern "C" fn freeresp (resp: *mut c_char) {
+    if resp.is_null() { return };
+    let _ = CString::from_raw(resp);
 }
