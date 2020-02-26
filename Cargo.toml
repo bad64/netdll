@@ -6,7 +6,6 @@ edition = "2018"
 
 [dependencies]
 dns-lookup = "1.0.1"
-regex = "1.2.1"
 
 [lib]
 name = "rsnet"
