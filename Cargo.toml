@@ -1,8 +1,9 @@
 [package]
 name = "netdll"
 version = "0.1.0"
-authors = ["sombra"]
-edition = "2018"
+authors = ["Bad64"]
+edition = "2020"
+license = "MIT"
 
 [dependencies]
 dns-lookup = "1.0.1"
