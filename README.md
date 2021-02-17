@@ -16,14 +16,25 @@ Depends on your language really. In C/C++ it's fairly simple: create a header fi
 /* netdll.h */
 #ifndef NETDLL_H
 #define NETDLL_H
-extern char* request(char* method, char* hostent, char* content);
+
+typedef struct
+{
+	char* request;
+	char* response;
+} Request;
+
+extern Request ffi_request(char* method, char* hostent, char* content, char* agent);
 #endif
+
 /* main.c or whatever */
 #include <stdio.h>
 #include "netdll.h"
+
 int main (int argc, char** argv)
 {
-	printf("%s", request("GET", "http://www.example.com", "", "definitely-legit-user-agent 4.20"));
+	Request r = ffi_request("HEAD", "http://www.example.com", "", "definitely-legit-user-agent 4.20");
+	printf("%s\n\n", r.request);
+	printf("%s\n", r.response);
 	return 0;
 }
 ```
