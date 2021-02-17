@@ -2,7 +2,7 @@
 name = "netdll"
 version = "0.1.0"
 authors = ["Bad64"]
-edition = "2020"
+edition = "2018"
 license = "MIT"
 
 [dependencies]
